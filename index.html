@@ -10,18 +10,63 @@
             function computerPlay() {
 
                 // Generate random number between 0-2 
-                choice = Math.floor(Math.random() * 3);
+                let choice = Math.floor(Math.random() * 3);
                 
-                // Return rock, paper, or scissors based on random choice
+                // Return rock, paper, or scissors based on random number
                 switch(choice) {
                     case 0:
-                        return "Rock";
+                        return "rock";
                     case 1:
-                        return "Paper";
+                        return "paper";
                     case 2:
-                        return "Scissors";
+                        return "scissors";
                 }
             }
+            
+            // Function to play round 
+            function playRound(playerSelection, computerSelection) {
+
+                // Convert player input to lowercase
+                playerSelection = playerSelection.toLowerCase();
+
+                // If players choice is rock
+                if (playerSelection == "rock") {
+                    switch(computerSelection) {
+                        case "rock":
+                            return "It's a tie!";
+                        case "paper":
+                            return "You lose! Paper beats Rock";
+                        case "scissors":
+                            return "You win! Rock beats Scissors";
+                    }
+                }
+
+                // If players choice is paper
+                else if (playerSelection == "paper") {
+                    switch(computerSelection) {
+                        case "rock":
+                            return "You win! Paper beats Rock";
+                        case "paper": 
+                            return "It's a tie!";
+                        case "scissors": 
+                            return "You lose! Scissors beats Paper";
+                    }
+                }
+
+                //If players choice is scissors
+                else {
+                    switch(computerSelection) {
+                        case "rock": 
+                            return "You lose! Rock beats Scissors";
+                        case "paper": 
+                            return "You win! Scissors beats Paper";
+                        case "scissors": 
+                            return "It's a tie!";
+                    }
+                }
+
+            }
+
         </script>
     </body>
 </html>
