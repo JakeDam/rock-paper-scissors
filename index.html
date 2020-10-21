@@ -6,8 +6,21 @@
     </head>
     <body>
         <script>
+            // Function for computers choice
             function computerPlay() {
+
+                // Generate random number between 0-2 
+                choice = Math.floor(Math.random() * 3);
                 
+                // Return rock, paper, or scissors based on random choice
+                switch(choice) {
+                    case 0:
+                        return "Rock";
+                    case 1:
+                        return "Paper";
+                    case 2:
+                        return "Scissors";
+                }
             }
         </script>
     </body>
