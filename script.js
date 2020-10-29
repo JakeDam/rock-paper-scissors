@@ -116,7 +116,7 @@ function resetGame() {
     scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
 }
 
-// Add event listener to each button 
+// Add event listener to each choice button 
 const buttons = document.querySelectorAll(".btn");
 
 buttons.forEach((button) => {
@@ -124,4 +124,11 @@ buttons.forEach((button) => {
         playRound(button.id, computerPlay());
     });
 });
+
+// Add event listener to reset button
+const reset = document.querySelector("#reset");
+
+reset.addEventListener("click", resetGame);
+
+
 
