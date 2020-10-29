@@ -21,15 +21,22 @@ function playRound(playerSelection, computerSelection) {
     // Convert player input to lowercase
     playerSelection = playerSelection.toLowerCase();
 
+    let result = []; 
+
     // If players choice is rock
     if (playerSelection == "rock") {
         switch(computerSelection) {
             case "rock":
-                return "It's a tie!";
+                result[0] = "tie";
+                result[1] = "It's a tie!";
+                return result;
             case "paper":
-                return "You lose! Paper beats Rock";
+                result[0] = "lose";
+                result[1] = "You lose! Paper beats Rock";
             case "scissors":
-                return "You win! Rock beats Scissors";
+                result[0] = "win";
+                result[2] = "You win! Rock beats Scissors";
+                return result;
         }
     }
 
@@ -37,11 +44,17 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == "paper") {
         switch(computerSelection) {
             case "rock":
-                return "You win! Paper beats Rock";
+                result[0] = "win";
+                result[1] = "You win! Paper beats Rock";
+                return result;
             case "paper": 
-                return "It's a tie!";
+                result[0] = "tie";
+                result[1] = "It's a tie!";
+                return result;
             case "scissors": 
-                return "You lose! Scissors beats Paper";
+                result[0] = "lose";
+                reuslt[1] = "You lose! Scissors beats Paper";
+                return reuslt;
         }
     }
 
@@ -49,11 +62,17 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == "scissors"){
         switch(computerSelection) {
             case "rock": 
-                return "You lose! Rock beats Scissors";
+                result[0] = "lose";
+                result[1] = "You lose! Rock beats Scissors";
+                return result;
             case "paper": 
-                return "You win! Scissors beats Paper";
+                result[0] = "win";
+                result[1] = "You win! Scissors beats Paper";
+                return result;
             case "scissors": 
-                return "It's a tie!";
+                result[0] = "tie";
+                result[1] = "It's a tie!";
+                return result;
         }
     }
 }
