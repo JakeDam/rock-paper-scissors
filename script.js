@@ -5,6 +5,7 @@ let playerDiv = document.querySelector("#player-selection");
 let compDiv = document.querySelector("#computer-selection"); 
 let resultsDiv = document.querySelector("#results");
 let scoreboardDiv = document.querySelector("#scoreboard");
+let resetBtn = document.querySelector("#reset");
 
 // Function for computers choice
 function computerPlay() {
@@ -73,6 +74,7 @@ function playRound(playerSelection, computerSelection) {
                 playerDiv.textContent = "You chose PAPER";
                 compDiv.textContent = "Computer chose SCISSORS";
                 resultsDiv.textContent = "You lose! Scissors beats Paper";
+                computerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
                 return;
         }
@@ -85,12 +87,14 @@ function playRound(playerSelection, computerSelection) {
                 playerDiv.textContent = "You chose SCISSORS";
                 compDiv.textContent = "Computer chose ROCK";
                 resultsDiv.textContent = "You lose! Rock beats Scissors";
+                computerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
                 return;
             case "paper": 
                 playerDiv.textContent = "You chose SCISSORS";
                 compDiv.textContent = "Computer chose PAPER";
                 resultsDiv.textContent = "You win! Scissors beats Paper";
+                playerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
                 return; 
             case "scissors": 
@@ -130,5 +134,6 @@ const reset = document.querySelector("#reset");
 
 reset.addEventListener("click", resetGame);
 
+// Add logic to play up to 5
 
 
