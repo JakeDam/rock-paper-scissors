@@ -25,7 +25,21 @@ function computerPlay() {
     }
 }
 
-//Function to play round 
+// Function to end game
+function endGame(result) {
+    if (result == "player") {
+        resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
+        scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+        resetBtn.innerHTML = "Play Again";
+    }
+    else if (result == "computer") {
+        resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
+        scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+        resetBtn.innerHTML = "Play Again";
+    }
+}
+
+// Function to play round 
 function playRound(playerSelection, computerSelection) {
 
     // Convert player input to lowercase
@@ -47,16 +61,10 @@ function playRound(playerSelection, computerSelection) {
                 computerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
                 if (playerScore == 5) {
-                    resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
-                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
-                    resetBtn.innerHTML = "Play Again";
-                    return;
+                    endGame("player");
                 }
                 else if (computerScore == 5) {
-                    resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
-                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
-                    resetBtn.innerHTML = "Play Again";
-                    return;
+                    endGame("computer"); 
                 }
                 else {
                     return; 
@@ -68,16 +76,10 @@ function playRound(playerSelection, computerSelection) {
                 playerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
                 if (playerScore == 5) {
-                    resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
-                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
-                    resetBtn.innerHTML = "Play Again";
-                    return;
+                    endGame("player");  
                 }
                 else if (computerScore == 5) {
-                    resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
-                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
-                    resetBtn.innerHTML = "Play Again";
-                    return;
+                    endGame("computer");
                 }
                 else {
                     return; 
@@ -95,16 +97,10 @@ function playRound(playerSelection, computerSelection) {
                 playerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
                 if (playerScore == 5) {
-                    resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
-                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
-                    resetBtn.innerHTML = "Play Again";
-                    return;
+                    endGame("player");  
                 }
                 else if (computerScore == 5) {
-                    resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
-                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
-                    resetBtn.innerHTML = "Play Again";
-                    return;
+                    endGame("comptuer");  
                 }
                 else {
                     return; 
@@ -121,16 +117,10 @@ function playRound(playerSelection, computerSelection) {
                 computerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
                 if (playerScore == 5) {
-                    resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
-                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
-                    resetBtn.innerHTML = "Play Again";
-                    return;
+                    endGame("player");  
                 }
                 else if (computerScore == 5) {
-                    resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
-                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
-                    resetBtn.innerHTML = "Play Again";
-                    return;
+                    endGame("computer");  
                 }
                 else {
                     return; 
@@ -148,16 +138,12 @@ function playRound(playerSelection, computerSelection) {
                 computerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
                 if (playerScore == 5) {
-                    resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
-                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
-                    resetBtn.innerHTML = "Play Again";
-                    return;
+                    endGame("player");
+                    return; 
                 }
                 else if (computerScore == 5) {
-                    resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
-                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
-                    resetBtn.innerHTML = "Play Again";
-                    return;
+                    endGame("computer");
+                    return; 
                 }
                 else {
                     return; 
@@ -169,16 +155,12 @@ function playRound(playerSelection, computerSelection) {
                 playerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
                 if (playerScore == 5) {
-                    resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
-                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
-                    resetBtn.innerHTML = "Play Again";
-                    return;
+                    endGame("player");
+                    return;  
                 }
                 else if (computerScore == 5) {
-                    resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
-                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
-                    resetBtn.innerHTML = "Play Again";
-                    return;
+                    endGame("computer");
+                    return; 
                 }
                 else {
                     return; 
@@ -189,6 +171,9 @@ function playRound(playerSelection, computerSelection) {
                 resultsDiv.textContent = "It's a tie!";
                 return;
         }
+    }
+    else {
+        return;
     }
 }
 
