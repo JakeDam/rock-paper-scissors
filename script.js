@@ -89,7 +89,8 @@ function playRound(playerSelection, computerSelection) {
                     else {
                         return; 
                     }
-                }, 2000); 
+                }, 2000);
+                return;
             case "scissors":
                 setTimeout(function() {
                     playerDiv.textContent = "You chose ROCK";
@@ -113,92 +114,153 @@ function playRound(playerSelection, computerSelection) {
                         return; 
                     }
                 }, 2000);
+                return;
         }
     }
 
     // If players choice is paper
     else if (playerSelection == "paper" && (playerScore != 5 && computerScore != 5)) {
+
+        // Clear player, computer and results divs
+        playerDiv.textContent = "";
+        compDiv.textContent = "";
+        resultsDiv.textContent = "";
+
         switch(computerSelection) {
             case "paper": 
-                playerDiv.textContent = "You chose PAPER";
-                compDiv.textContent = "Computer chose PAPER";
-                resultsDiv.textContent = "It's a tie!";
+                setTimeout(function() {
+                    playerDiv.textContent = "You chose PAPER";
+                }, 500);
+                setTimeout(function() {
+                    compDiv.textContent = "Computer chose PAPER";
+                }, 1000);
+                setTimeout(function(){
+                    resultsDiv.textContent = "It's a tie!";
+                }, 1500);
                 return;
             case "rock":
-                playerDiv.textContent = "You chose PAPER";
-                compDiv.textContent = "Comptuer chose ROCK";
-                resultsDiv.textContent = "You win! Paper beats Rock";
-                playerScore += 1;
-                scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
-                if (playerScore == 5) {
-                    endGame("player");  
-                }
-                else if (computerScore == 5) {
-                    endGame("comptuer");  
-                }
-                else {
-                    return; 
-                }
-            case "scissors": 
-                playerDiv.textContent = "You chose PAPER";
-                compDiv.textContent = "Computer chose SCISSORS";
-                resultsDiv.textContent = "You lose! Scissors beats Paper";
-                computerScore += 1;
-                scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
-                if (playerScore == 5) {
-                    endGame("player");  
-                }
-                else if (computerScore == 5) {
-                    endGame("computer");  
-                }
-                else {
-                    return; 
-                }
+                setTimeout(function() {
+                    playerDiv.textContent = "You chose PAPER";
+                }, 500);
+                setTimeout(function() {
+                    compDiv.textContent = "Comptuer chose ROCK";
+                }, 1000);
+                setTimeout(function() {
+                    resultsDiv.textContent = "You win! Paper beats Rock";
+                    playerScore += 1;
+                    scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
+                }, 1500);
+                setTimeout(function() {
+                    if (playerScore == 5) {
+                        endGame("player");  
+                    }
+                    else if (computerScore == 5) {
+                        endGame("comptuer");  
+                    }
+                    else {
+                        return; 
+                    }
+                }, 2000);
+                return;
+            case "scissors":
+                setTimeout(function() {
+                    playerDiv.textContent = "You chose PAPER";
+                }, 500);
+                setTimeout(function() {
+                    compDiv.textContent = "Computer chose SCISSORS";
+                }, 1000); 
+                setTimeout(function() {
+                    resultsDiv.textContent = "You lose! Scissors beats Paper";
+                    computerScore += 1;
+                    scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
+                }, 1500); 
+                setTimeout(function() {
+                    if (playerScore == 5) {
+                        endGame("player");  
+                    }
+                    else if (computerScore == 5) {
+                        endGame("computer");  
+                    }
+                    else {
+                        return; 
+                    }
+                }, 2000);
+                return;           
         }
     }
 
     // If players choice is scissors
     else if (playerSelection == "scissors" && (playerScore != 5 && computerScore != 5)){
+
+        // Clear player, computer and results divs
+        playerDiv.textContent = "";
+        compDiv.textContent = "";
+        resultsDiv.textContent = "";
+
         switch(computerSelection) {
             case "scissors": 
-                playerDiv.textContent = "You chose SCISSORS";
-                compDiv.textContent = "Comptuer chose SCISSORS";
-                resultsDiv.textContent = "It's a tie!";
+                setTimeout(function() {
+                    playerDiv.textContent = "You chose SCISSORS";
+                }, 500);
+                setTimeout(function() {
+                    compDiv.textContent = "Comptuer chose SCISSORS";
+                }, 1000);
+                setTimeout(function() {
+                    resultsDiv.textContent = "It's a tie!";
+                }, 1500);
                 return;
             case "rock": 
-                playerDiv.textContent = "You chose SCISSORS";
-                compDiv.textContent = "Computer chose ROCK";
-                resultsDiv.textContent = "You lose! Rock beats Scissors";
-                computerScore += 1;
-                scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
-                if (playerScore == 5) {
-                    endGame("player");
-                    return; 
-                }
-                else if (computerScore == 5) {
-                    endGame("computer");
-                    return; 
-                }
-                else {
-                    return; 
-                }
-            case "paper": 
-                playerDiv.textContent = "You chose SCISSORS";
-                compDiv.textContent = "Computer chose PAPER";
-                resultsDiv.textContent = "You win! Scissors beats Paper";
-                playerScore += 1;
-                scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
-                if (playerScore == 5) {
-                    endGame("player");
-                    return;  
-                }
-                else if (computerScore == 5) {
-                    endGame("computer");
-                    return; 
-                }
-                else {
-                    return; 
-                }
+                setTimeout(function() {
+                    playerDiv.textContent = "You chose SCISSORS";
+                }, 500);
+                setTimeout(function() {
+                    compDiv.textContent = "Computer chose ROCK";
+                }, 1000); 
+                setTimeout(function() {
+                    resultsDiv.textContent = "You lose! Rock beats Scissors";
+                    computerScore += 1;
+                    scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
+                }, 1500); 
+                setTimeout(function() {
+                    if (playerScore == 5) {
+                        endGame("player");
+                        return; 
+                    }
+                    else if (computerScore == 5) {
+                        endGame("computer");
+                        return; 
+                    }
+                    else {
+                        return; 
+                    }
+                }, 2000); 
+                return;  
+            case "paper":
+                setTimeout(function() {
+                    playerDiv.textContent = "You chose SCISSORS";
+                }, 500);
+                setTimeout(function() {
+                    compDiv.textContent = "Computer chose PAPER";
+                }, 1000);
+                setTimeout(function() {
+                    resultsDiv.textContent = "You win! Scissors beats Paper";
+                    playerScore += 1;
+                    scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
+                }, 1500);
+                setTimeout(function() {
+                    if (playerScore == 5) {
+                        endGame("player");
+                        return;  
+                    }
+                    else if (computerScore == 5) {
+                        endGame("computer");
+                        return; 
+                    }
+                    else {
+                        return; 
+                    }
+                }, 2000); 
+                return;      
         }
     }
     else {
