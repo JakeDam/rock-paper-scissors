@@ -42,54 +42,88 @@ function endGame(result) {
 // Function to play round 
 function playRound(playerSelection, computerSelection) {
 
+
     // Convert player input to lowercase
     playerSelection = playerSelection.toLowerCase();
 
     
     // If player choice is rock
     if (playerSelection == "rock" && (playerScore != 5 && computerScore != 5)) {
+       
+        // Clear player, computer and results divs
+        playerDiv.textContent = "";
+        compDiv.textContent = "";
+        resultsDiv.textContent = "";
+
         switch(computerSelection) {
             case "rock":
-                playerDiv.textContent = "You chose ROCK";
-                compDiv.textContent = "Computer chose ROCK";
-                resultsDiv.textContent = "It's a tie!";
+                setTimeout(function() {
+                    playerDiv.textContent = "You chose ROCK";
+                }, 500);
+                setTimeout(function() {
+                    compDiv.textContent = "Computer chose ROCK";
+                }, 1000);
+                setTimeout(function(){
+                    resultsDiv.textContent = "It's a tie!";
+                }, 1500);
                 return;
             case "paper":
-                playerDiv.textContent = "You chose ROCK";
-                compDiv.textContent = "Computer chose PAPER";
-                resultsDiv.textContent = "You lose! Paper beats Rock";
-                computerScore += 1;
-                scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
-                if (playerScore == 5) {
-                    endGame("player");
-                }
-                else if (computerScore == 5) {
-                    endGame("computer"); 
-                }
-                else {
-                    return; 
-                }
+                setTimeout(function() {
+                    playerDiv.textContent = "You chose ROCK";
+                }, 500);
+                setTimeout(function() {
+                    compDiv.textContent = "Computer chose PAPER";
+                }, 1000);
+                setTimeout(function() {
+                    resultsDiv.textContent = "You lose! Paper beats Rock";
+                    computerScore += 1;
+                    scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`; 
+                }, 1500);
+                setTimeout(function() {
+                    if (playerScore == 5) {
+                        endGame("player");
+                    }
+                    else if (computerScore == 5) {
+                        endGame("computer"); 
+                    }
+                    else {
+                        return; 
+                    }
+                }, 2000); 
             case "scissors":
-                playerDiv.textContent = "You chose ROCK";
-                compDiv.textContent = "Computer chose SCISSORS";
-                resultsDiv.textContent = "You win! Rock beats Scissors";
-                playerScore += 1;
-                scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
-                if (playerScore == 5) {
-                    endGame("player");  
-                }
-                else if (computerScore == 5) {
-                    endGame("computer");
-                }
-                else {
-                    return; 
-                }
+                setTimeout(function() {
+                    playerDiv.textContent = "You chose ROCK";
+                }, 500);
+                setTimeout(function() {
+                    compDiv.textContent = "Computer chose SCISSORS";
+                }, 1000);
+                setTimeout(function() {
+                    resultsDiv.textContent = "You win! Rock beats Scissors";
+                    playerScore += 1;
+                    scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
+                }, 1500);
+                setTimeout(function() {
+                    if (playerScore == 5) {
+                        endGame("player");
+                    }
+                    else if (computerScore == 5) {
+                        endGame("computer"); 
+                    }
+                    else {
+                        return; 
+                    }
+                }, 2000);
         }
     }
 
     // If players choice is paper
     else if (playerSelection == "paper" && (playerScore != 5 && computerScore != 5)) {
         switch(computerSelection) {
+            case "paper": 
+                playerDiv.textContent = "You chose PAPER";
+                compDiv.textContent = "Computer chose PAPER";
+                resultsDiv.textContent = "It's a tie!";
+                return;
             case "rock":
                 playerDiv.textContent = "You chose PAPER";
                 compDiv.textContent = "Comptuer chose ROCK";
@@ -105,11 +139,6 @@ function playRound(playerSelection, computerSelection) {
                 else {
                     return; 
                 }
-            case "paper": 
-                playerDiv.textContent = "You chose PAPER";
-                compDiv.textContent = "Computer chose PAPER";
-                resultsDiv.textContent = "It's a tie!";
-                return;
             case "scissors": 
                 playerDiv.textContent = "You chose PAPER";
                 compDiv.textContent = "Computer chose SCISSORS";
@@ -131,6 +160,11 @@ function playRound(playerSelection, computerSelection) {
     // If players choice is scissors
     else if (playerSelection == "scissors" && (playerScore != 5 && computerScore != 5)){
         switch(computerSelection) {
+            case "scissors": 
+                playerDiv.textContent = "You chose SCISSORS";
+                compDiv.textContent = "Comptuer chose SCISSORS";
+                resultsDiv.textContent = "It's a tie!";
+                return;
             case "rock": 
                 playerDiv.textContent = "You chose SCISSORS";
                 compDiv.textContent = "Computer chose ROCK";
@@ -165,11 +199,6 @@ function playRound(playerSelection, computerSelection) {
                 else {
                     return; 
                 }
-            case "scissors": 
-                playerDiv.textContent = "You chose SCISSORS";
-                compDiv.textContent = "Comptuer chose SCISSORS";
-                resultsDiv.textContent = "It's a tie!";
-                return;
         }
     }
     else {
