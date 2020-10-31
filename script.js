@@ -1,11 +1,12 @@
 //Global variables 
 let playerScore = 0;
-let computerScore = 0; 
-let playerDiv = document.querySelector("#player-selection");
-let compDiv = document.querySelector("#computer-selection"); 
-let resultsDiv = document.querySelector("#results");
-let scoreboardDiv = document.querySelector("#scoreboard");
-let resetBtn = document.querySelector("#reset");
+let computerScore = 0;
+const buttons = document.querySelectorAll(".btn"); 
+const playerDiv = document.querySelector("#player-selection");
+const compDiv = document.querySelector("#computer-selection"); 
+const resultsDiv = document.querySelector("#results");
+const scoreboardDiv = document.querySelector("#scoreboard");
+const resetBtn = document.querySelector("#reset");
 
 // Function for computers choice
 function computerPlay() {
@@ -30,8 +31,9 @@ function playRound(playerSelection, computerSelection) {
     // Convert player input to lowercase
     playerSelection = playerSelection.toLowerCase();
 
-    // If players choice is rock
-    if (playerSelection == "rock") {
+    
+    // If player choice is rock
+    if (playerSelection == "rock" && (playerScore != 5 && computerScore != 5)) {
         switch(computerSelection) {
             case "rock":
                 playerDiv.textContent = "You chose ROCK";
@@ -44,19 +46,47 @@ function playRound(playerSelection, computerSelection) {
                 resultsDiv.textContent = "You lose! Paper beats Rock";
                 computerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
-                return;
+                if (playerScore == 5) {
+                    resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
+                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+                    resetBtn.innerHTML = "Play Again";
+                    return;
+                }
+                else if (computerScore == 5) {
+                    resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
+                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+                    resetBtn.innerHTML = "Play Again";
+                    return;
+                }
+                else {
+                    return; 
+                }
             case "scissors":
                 playerDiv.textContent = "You chose ROCK";
                 compDiv.textContent = "Computer chose SCISSORS";
                 resultsDiv.textContent = "You win! Rock beats Scissors";
                 playerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
-                return;
+                if (playerScore == 5) {
+                    resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
+                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+                    resetBtn.innerHTML = "Play Again";
+                    return;
+                }
+                else if (computerScore == 5) {
+                    resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
+                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+                    resetBtn.innerHTML = "Play Again";
+                    return;
+                }
+                else {
+                    return; 
+                }
         }
     }
 
     // If players choice is paper
-    else if (playerSelection == "paper") {
+    else if (playerSelection == "paper" && (playerScore != 5 && computerScore != 5)) {
         switch(computerSelection) {
             case "rock":
                 playerDiv.textContent = "You chose PAPER";
@@ -64,7 +94,21 @@ function playRound(playerSelection, computerSelection) {
                 resultsDiv.textContent = "You win! Paper beats Rock";
                 playerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
-                return;
+                if (playerScore == 5) {
+                    resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
+                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+                    resetBtn.innerHTML = "Play Again";
+                    return;
+                }
+                else if (computerScore == 5) {
+                    resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
+                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+                    resetBtn.innerHTML = "Play Again";
+                    return;
+                }
+                else {
+                    return; 
+                }
             case "paper": 
                 playerDiv.textContent = "You chose PAPER";
                 compDiv.textContent = "Computer chose PAPER";
@@ -76,12 +120,26 @@ function playRound(playerSelection, computerSelection) {
                 resultsDiv.textContent = "You lose! Scissors beats Paper";
                 computerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
-                return;
+                if (playerScore == 5) {
+                    resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
+                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+                    resetBtn.innerHTML = "Play Again";
+                    return;
+                }
+                else if (computerScore == 5) {
+                    resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
+                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+                    resetBtn.innerHTML = "Play Again";
+                    return;
+                }
+                else {
+                    return; 
+                }
         }
     }
 
     // If players choice is scissors
-    else if (playerSelection == "scissors"){
+    else if (playerSelection == "scissors" && (playerScore != 5 && computerScore != 5)){
         switch(computerSelection) {
             case "rock": 
                 playerDiv.textContent = "You chose SCISSORS";
@@ -89,14 +147,42 @@ function playRound(playerSelection, computerSelection) {
                 resultsDiv.textContent = "You lose! Rock beats Scissors";
                 computerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
-                return;
+                if (playerScore == 5) {
+                    resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
+                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+                    resetBtn.innerHTML = "Play Again";
+                    return;
+                }
+                else if (computerScore == 5) {
+                    resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
+                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+                    resetBtn.innerHTML = "Play Again";
+                    return;
+                }
+                else {
+                    return; 
+                }
             case "paper": 
                 playerDiv.textContent = "You chose SCISSORS";
                 compDiv.textContent = "Computer chose PAPER";
                 resultsDiv.textContent = "You win! Scissors beats Paper";
                 playerScore += 1;
                 scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
-                return; 
+                if (playerScore == 5) {
+                    resultsDiv.textContent = "Congrats! You are the winner! Play Again!";
+                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+                    resetBtn.innerHTML = "Play Again";
+                    return;
+                }
+                else if (computerScore == 5) {
+                    resultsDiv.textContent = "Oh no! You are the loser! Better luck next time!";
+                    scoreboardDiv.innerHTML = `Final Score: Player: ${playerScore} | Computer: ${computerScore}`;
+                    resetBtn.innerHTML = "Play Again";
+                    return;
+                }
+                else {
+                    return; 
+                }
             case "scissors": 
                 playerDiv.textContent = "You chose SCISSORS";
                 compDiv.textContent = "Comptuer chose SCISSORS";
@@ -105,6 +191,7 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
+
 
 // Function to reset game
 function resetGame() {
@@ -118,11 +205,10 @@ function resetGame() {
     compDiv.textContent = "";
     resultsDiv.textContent = "Make a choice to play! First to 5 points wins!";
     scoreboardDiv.innerHTML = `Player: ${playerScore} | Computer: ${computerScore}`;
+    resetBtn.innerHTML = "Reset Game";
 }
 
 // Add event listener to each choice button 
-const buttons = document.querySelectorAll(".btn");
-
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         playRound(button.id, computerPlay());
@@ -133,7 +219,3 @@ buttons.forEach((button) => {
 const reset = document.querySelector("#reset");
 
 reset.addEventListener("click", resetGame);
-
-// Add logic to play up to 5
-
-
