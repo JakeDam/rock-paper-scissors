@@ -6,22 +6,26 @@
         <link rel="stylesheet" href="styles.css"> 
     </head>
     <body>
-        <div id="results">
-            Make a choice to play! First to 5 points wins!
-        </div>
-        <div id="buttons">
-            <button class="btn" id="rock">ROCK</button>
-            <button class="btn" id="paper">PAPER</button>
-            <button class="btn" id="scissors">SCISSORS</button>
-        </div>
-        <div id="player-selection"></div>
-        <div id="computer-selection"></div>
-        <div id="scoreboard">
-            Player: 0 | Computer: 0
-        </div>
-        <div id ="reset-wrap">
-            <button id="reset">Reset Game</button>
-        </div>
-    </body>
+        <div id="flex-container">
+            <div id="results">
+                Make a choice to play! First to 5 points wins!
+            </div>
+            <div id="buttons">
+                <button class="btn" id="rock">ROCK</button>
+                <button class="btn" id="paper">PAPER</button>
+                <button class="btn" id="scissors">SCISSORS</button>
+            </div>
+            <div id="selection-wrap">
+                <div id="player-selection"></div>
+                <div id="computer-selection"></div>
+            </div>
+            <div id="scoreboard">
+                Player: 0 | Computer: 0
+            </div>
+            <div id ="reset-wrap">
+                <button id="reset">Reset Game</button>
+            </div>
+        </body>
+    </div>  
     <script src="script.js"></script>
 </html>
