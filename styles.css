@@ -20,11 +20,15 @@ body {
     font-size: 20px;
     font-weight: bold;
     border-style: solid;
+    transition: all .2s ease-in-out;
 }
 
 .btn:hover {
     transform: scale(1.25);
+}
 
+.btn:active {
+    transform: scale(1.0);
 }
 
 #flex-container {
@@ -107,9 +111,21 @@ body {
     outline: none;
 }
 
+#reset:hover {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-box-shadow: 0 0 20px #6abfc3;
+}
+
 #rock {
     color: sienna; 
     border-color: sienna;
+}
+
+#rock:hover {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-box-shadow: 0 0 20px sienna;
 }
 
 #paper {
@@ -117,7 +133,19 @@ body {
     border-color: lightblue;
 }
 
+#paper:hover {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-box-shadow: 0 0 20px lightblue;
+}
+
 #scissors {
     color: silver;
     border-color: silver;
+}
+
+#scissors:hover {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-box-shadow: 0 0 20px silver;
 }
