@@ -58,10 +58,10 @@ body {
     gap: 50px;
 }
 
-#selection-wrap {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
+#player-wrap {
+    display: flex; 
+    width: 50%;
+    justify-content: center;
 }
 
 #player-selection {
@@ -70,6 +70,13 @@ body {
     color:rgba(74,74,74,0.8);
     font-weight: bold;
     font-size: 24px;
+    height: 24px;
+}
+
+#comp-wrap {
+    display: flex;
+    width: 50%;
+    justify-content: center;
 }
 
 #computer-selection {
@@ -78,6 +85,7 @@ body {
     color:rgba(74,74,74,0.8);
     font-weight: bold;
     font-size: 24px;
+    height: 24px;
 }
 
 #scoreboard {
@@ -149,3 +157,4 @@ body {
   -webkit-animation-iteration-count: 1;
   -webkit-box-shadow: 0 0 20px silver;
 }
+
